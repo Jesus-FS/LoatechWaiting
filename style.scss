@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'Gudea';
+  src: url(font/Gudea/Gudea-Regular.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gudea';
+  src: url(font/Gudea/Gudea-Bold.ttf) format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gudea';
+  font-size: 24px;
+  --animate-duration: 0.6s;
+  color: #595959;
+}
+
+body {
+  background: url(img/backgrounds/loatech_background.svg);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .loatech {
+      position: relative;
+      margin: 30px;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 60px;
+
+      img {
+        width: 403px;
+      }
+    }
+
+    .text {
+      overflow-x: hidden;
+
+      p {
+        margin: 30px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      #spanish {
+        display: flex;
+      }
+
+      #english {
+        display: none;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        justify-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #595959;
+        font-weight: bold;
+      }
+    }
+
+    label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #595959;
+
+      p {
+        margin: 0px 10px 0 10px;
+        font-size: 18px;
+      }
+
+      input {
+        margin-top: 0px;
+        position: relative;
+        width: 40px;
+        height: 20px;
+        -webkit-appearance: none;
+        background: #ffaa00;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.5s;
+
+        &:checked {
+          // background: #c6c6c6;
+          &:before {
+            left: 21px;
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          border-radius: 10px;
+          top: 2px;
+          left: 2px;
+          background: #fff;
+          transform: scale(1.1);
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  * {
+    font-size: 18px;
+  }
+
+  body {
+    .container {
+      .loatech {
+        img {
+          width: 300px;
+        }
+      }
+
+      label {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
